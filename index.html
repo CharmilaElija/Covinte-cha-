@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e9ddce">
+<title>Jeremy & Júlia | Convite Digital</title>
+
+<style>
+:root {
+  --cream: #eee3d6;
+  --paper: #f8f1e8;
+  --brown: #51372e;
+  --gold: #b28b55;
+  --ink: #30251f;
+  --muted: #88776b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+/* CAPA */
+
+.cover {
+  min-height: 100svh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(20,14,12,.35),rgba(20,14,12,.58)),
+    url('images/IMG_2145.jpeg') center/cover;
+  padding: 28px 18px;
+  color: white;
+  text-align: center;
+}
+
+.cover:after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255,255,255,.55);
+  pointer-events: none;
+}
+
+.envelope-wrap {
+  position: relative;
+  z-index: 1;
+  width: min(370px,90vw);
+  cursor: pointer;
+}
+
+.envelope {
+  height: 470px;
+  max-height: 68svh;
+  min-height: 390px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg,#f4e9dc,#ddcbbb);
+  color: var(--brown);
+  box-shadow: 0 18px 55px #0005;
+  border: 1px solid #d2bfae;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.envelope:before,
+.envelope:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.envelope:before {
+  background:
+    linear-gradient(145deg,transparent 49.7%,#cdb8a6 50%,transparent 50.5%),
+    linear-gradient(35deg,transparent 49.7%,#cdb8a6 50%,transparent 50.5%);
+}
+
+.envelope:after {
+  background:
+    linear-gradient(35deg,transparent 49.5%,rgba(255,255,255,.35) 50%,transparent 50.5%);
+}
+
+.envelope-photo {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(#0002,#0005),
+    url('images/IMG_2145.jpeg') center/cover;
+  opacity: .28;
+}
+
+.envelope-copy {
+  position: absolute;
+  top: 24px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: #6d5141;
+}
+
+.seal {
+  z-index: 2;
+  width: 138px;
+  height: 138px;
+  border-radius: 43% 47% 44% 46%;
+  background: radial-gradient(circle at 35% 28%,#785342,#4b2e25 72%);
+  border: 7px double #8a6652;
+  box-shadow: 0 7px 12px #49302566,inset 0 0 0 2px #38231e;
+  display: grid;
+  place-items: center;
+  color: #d5b99b;
+  position: relative;
+}
+
+.seal:before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid #a27b62;
+  border-radius: 45%;
+}
+
+.monogram {
+  font-size: 42px;
+  line-height: .8;
+  letter-spacing: -5px;
+  text-shadow: 1px 2px 2px #251712;
+}
+
+.seal small {
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+
+.ribbon {
+  position: absolute;
+  z-index: 1;
+  top: calc(50% + 65px);
+  height: 92px;
+  width: 3px;
+  background: linear-gradient(90deg,#8e6c3f,#e1c18b,#9c7849);
+  box-shadow: 12px 0 #c5a16e;
+}
+
+.dried {
+  position: absolute;
+  top: 28px;
+  font-size: 35px;
+  filter: sepia(.5);
+  opacity: .8;
+}
+
+.open-hint {
+  margin: 18px 0 0;
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.cover-names {
+  font-size: clamp(28px,7vw,42px);
+  margin: 0 0 18px;
+  text-shadow: 0 2px 12px #0008;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* SECÇÕES */
+
+main {
+  max-width: 850px;
+  margin: auto;
+  padding: 0 18px 55px;
+}
+
+section {
+  padding: 58px 0;
+  text-align: center;
+  border-bottom: 1px solid #d9cbbd;
+}
+
+.eyebrow {
+  font: 11px Arial,sans-serif;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(25px,6vw,36px);
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin: 10px 0 25px;
+  color: var(--brown);
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--brown);
+  margin: 25px 0 8px;
+}
+
+p {
+  line-height: 1.8;
+  color: #66564b;
+}
+
+.names {
+  font-size: clamp(25px,6vw,34px);
+  line-height: 1.5;
+  color: var(--brown);
+}
+
+.family {
+  font-size: 17px;
+  line-height: 2;
+}
+
+.date {
+  font-size: 26px;
+  color: var(--brown);
+  margin: 18px 0 5px;
+}
+
+/* CONTAGEM DECRESCENTE */
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.timebox {
+  background: #e9ddce;
+  padding: 15px 12px;
+  min-width: 70px;
+}
+
+.timebox strong {
+  display: block;
+  font-size: 25px;
+  font-weight: normal;
+  color: var(--brown);
+}
+
+.timebox span {
+  font: 10px Arial,sans-serif;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+/* GALERIA 3D */
+
+.gallery {
+  perspective: 1000px;
+  height: 310px;
+  position: relative;
+  overflow: hidden;
+  margin: 15px auto;
+  max-width: 650px;
+}
+
+.carousel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 205px;
+  transform-style: preserve-3d;
+  animation: spin 24s linear infinite;
+}
+
+.carousel img {
+  position: absolute;
+  width: 150px;
+  height: 205px;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 8px 20px #47332633;
+  backface-visibility: hidden;
+}
+
+.carousel img:nth-child(1) {
+  transform: rotateY(0deg) translateZ(235px);
+}
+
+.carousel img:nth-child(2) {
+  transform: rotateY(60deg) translateZ(235px);
+}
+
+.carousel img:nth-child(3) {
+  transform: rotateY(120deg) translateZ(235px);
+}
+
+.carousel img:nth-child(4) {
+  transform: rotateY(180deg) translateZ(235px);
+}
+
+.carousel img:nth-child(5) {
+  transform: rotateY(240deg) translateZ(235px);
+}
+
+.carousel img:nth-child(6) {
+  transform: rotateY(300deg) translateZ(235px);
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%,-50%) rotateY(0);
+  }
+  to {
+    transform: translate(-50%,-50%) rotateY(360deg);
+  }
+}
+
+/* CRONOGRAMA */
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.timeline li {
+  padding: 13px;
+  border-bottom: 1px solid #dfd1c3;
+  letter-spacing: 1px;
+}
+
+/* DRESS CODE */
+
+.dress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.dress-card {
+  background: #eee3d6;
+  padding: 18px;
+}
+
+.dress-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+/* MANUAL */
+
+.rules {
+  max-width: 540px;
+  margin: auto;
+  text-align: left;
+  line-height: 2;
+}
+
+/* BOTÕES E FORMULÁRIO */
+
+.btn {
+  display: inline-block;
+  background: var(--brown);
+  color: white;
+  border: 0;
+  padding: 13px 25px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.btn.light {
+  background: transparent;
+  color: var(--brown);
+  border: 1px solid var(--brown);
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font: 12px Arial,sans-serif;
+  letter-spacing: 1px;
+  margin: 14px 0 6px;
+  color: var(--muted);
+}
+
+input,textarea,select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cdbdad;
+  background: #fffaf5;
+  color: var(--ink);
+  border-radius: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 35px 15px;
+  background: #e9ddce;
+  color: var(--brown);
+  letter-spacing: 2px;
+  font: 11px Arial,sans-serif;
+}
+
+/* TELEMÓVEIS */
+
+@media(max-width:500px) {
+  .gallery {
+    height: 270px;
+  }
+
+  .carousel {
+    width: 125px;
+    height: 175px;
+  }
+
+  .carousel img {
+    width: 125px;
+    height: 175px;
+  }
+
+  .carousel img:nth-child(1) {
+    transform: rotateY(0deg) translateZ(180px);
+  }
+
+  .carousel img:nth-child(2) {
+    transform: rotateY(60deg) translateZ(180px);
+  }
+
+  .carousel img:nth-child(3) {
+    transform: rotateY(120deg) translateZ(180px);
+  }
+
+  .carousel img:nth-child(4) {
+    transform: rotateY(180deg) translateZ(180px);
+  }
+
+  .carousel img:nth-child(5) {
+    transform: rotateY(240deg) translateZ(180px);
+  }
+
+  .carousel img:nth-child(6) {
+    transform: rotateY(300deg) translateZ(180px);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CAPA DO CONVITE -->
+
+<header class="cover" id="capa">
+
+  <div class="envelope-wrap"
+       id="openInvite"
+       role="button"
+       tabindex="0"
+       aria-label="Abrir convite">
+
+    <h1 class="cover-names">Jeremy <span>&</span> Júlia</h1>
+
+    <div class="envelope">
+
+      <div class="envelope-photo"></div>
+
+      <div class="envelope-copy">
+        UM CONVITE ESPECIAL
+      </div>
+
+      <div class="dried">✽</div>
+
+      <div class="ribbon"></div>
+
+      <div class="seal">
+        <div class="monogram">
+          J<span style="font-size:27px">J</span>
+          <br>
+          <small>JEREMY & JÚLIA</small>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="open-hint">
+      Clique no lacre para abrir o convite
+    </p>
+
+  </div>
+</header>
+
+
+<main id="invitation" class="hidden">
+
+<!-- APRESENTAÇÃO -->
+
+<section>
+  <div class="eyebrow">Com amor</div>
+  <h2>Jeremy & Júlia</h2>
+  <p>
+    Um dia especial, uma história de amor
+    e a alegria de partilhá-la convosco.
+  </p>
+</section>
+
+
+<!-- CONTAGEM DECRESCENTE -->
+
+<section>
+
+  <div class="eyebrow">O grande dia</div>
+  <h2>Contagem decrescente</h2>
+
+  <div class="countdown">
+
+    <div class="timebox">
+      <strong id="days">--</strong>
+      <span>DIAS</span>
+    </div>
+
+    <div class="timebox">
+      <strong id="hours">--</strong>
+      <span>HORAS</span>
+    </div>
+
+    <div class="timebox">
+      <strong id="minutes">--</strong>
+      <span>MINUTOS</span>
+    </div>
+
+    <div class="timebox">
+      <strong id="seconds">--</strong>
+      <span>SEGUNDOS</span>
+    </div>
+
+  </div>
+
+  <p id="countdownMessage"></p>
+
+</section>
+
+
+<!-- FAMÍLIAS E NOIVOS -->
+
+<section>
+
+  <div class="eyebrow">A nossa união</div>
+
+  <h2>Com a bênção de Deus e suas famílias</h2>
+
+  <div class="family">
+    Fausto Gomes Teixeira<br>
+    Laurinda Gomes Teixeira<br><br>
+
+    Tobias Sandro Magalhães<br>
+    Samanta de Sousa
+  </div>
+
+  <p>
+    ANUNCIAM COM ALEGRIA O CASAMENTO DE SEUS FILHOS
+  </p>
+
+  <div class="names">
+    Jeremy e Júlia
+  </div>
+
+  <p>O que se realizará no dia</p>
+
+  <div class="date">
+    9 de Novembro de 2026
+  </div>
+
+  <p>Segunda-feira, às 10h</p>
+
+</section>
+
+
+<!-- GALERIA -->
+
+<section>
+
+  <div class="eyebrow">Momentos especiais</div>
+
+  <h2>Nossa galeria</h2>
+
+  <p>
+    Uma pequena coleção de momentos
+    que fazem parte da nossa história.
+  </p>
+
+  <div class="gallery">
+
+    <div class="carousel">
+
+      <img src="images/IMG_2145.jpeg" alt="Foto do casal 1">
+
+      <img src="images/IMG_2146.jpeg" alt="Foto do casal 2">
+
+      <img src="images/IMG_2147.jpeg" alt="Foto do casal 3">
+
+      <img src="images/IMG_2148.jpeg" alt="Foto do casal 4">
+
+      <img src="images/IMG_2149.jpeg" alt="Foto do casal 5">
+
+      <img src="images/IMG_2150.jpeg" alt="Foto do casal 6">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CRONOGRAMA -->
+
+<section>
+
+  <div class="eyebrow">Programa</div>
+
+  <h2>Cronograma</h2>
+
+  <ul class="timeline">
+
+    <li>CERIMÓNIA RELIGIOSA</li>
+
+    <li>COPO DE ÁGUA</li>
+
+    <li>ENTRADA DOS NOIVOS</li>
+
+    <li>JANTAR</li>
+
+    <li>CERIMÓNIA RELIGIOSA / BRINDE</li>
+
+    <li>FESTA E ANIMAÇÃO</li>
+
+    <li>FIM DO EVENTO</li>
+
+  </ul>
+
+</section>
+
+
+<!-- DRESS CODE -->
+
+<section>
+
+  <div class="eyebrow">Traje</div>
+
+  <h2>Dress code</h2>
+
+  <div class="names">FORMAL</div>
+
+  <p>
+    Vista-se para uma noite de elegância,
+    romance e sofisticação, com cores suaves,
+    tecidos fluidos e um toque de brilho
+    para realçar a noite.
+  </p>
+
+  <div class="dress-grid">
+
+    <div class="dress-card">
+
+      <h3>Senhoras</h3>
+
+      <p>Vestidos longos, em cores suaves.</p>
+
+      <img
+        src="images/vestidos.jpg"
+        alt="Sugestões de vestidos"
+        onerror="this.style.display='none'"
+      >
+
+    </div>
+
+    <div class="dress-card">
+
+      <h3>Senhores</h3>
+
+      <p>Fato escuro / Terno.</p>
+
+      <img
+        src="images/fatos.jpg"
+        alt="Sugestões de fatos"
+        onerror="this.style.display='none'"
+      >
+
+    </div>
+
+  </div>
+
+  <p>
+    Pedimos gentilmente que evitem o uso de branco,
+    champanhe e cores claras, reservado exclusivamente
+    ao noivo. Não é permitido o uso de blazer com
+    calças pretas, sapatos sociais ou ténis.
+    O uso de blazer com calça social é obrigatório.
+  </p>
+
+</section>
+
+
+<!-- PRESENTES -->
+
+<section>
+
+  <div class="eyebrow">Com carinho</div>
+
+  <h2>Presentes</h2>
+
+  <p>
+    A sua presença no nosso casamento já é o melhor
+    presente que poderíamos receber! Mas para quem
+    quiser nos mimar um pouco mais, preparamos com
+    carinho uma pequena lista de presentes, para
+    ajudar na construção da nossa nova vida.
+  </p>
+
+  <p>
+    Com a sua ajuda, cada presente escolhido nos
+    aproxima um pouco mais do lar dos nossos sonhos.
+  </p>
+
+  <a class="btn" href="#" id="giftList">
+    Ver lista
+  </a>
+
+  <h3>Transferência bancária</h3>
+
+  <p>
+    <strong>Nome:</strong>
+    <span id="accountName">A preencher</span>
+    <br>
+
+    <strong>IBAN:</strong>
+    <span id="iban">A preencher</span>
+  </p>
+
+  <button
+    class="btn light"
+    type="button"
+    onclick="copyIBAN()"
+  >
+    Copiar IBAN
+  </button>
+
+</section>
+
+
+<!-- MANUAL DO CONVIDADO -->
+
+<section>
+
+  <div class="eyebrow">Pequenos cuidados</div>
+
+  <h2>Manual do bom convidado</h2>
+
+  <ul class="rules">
+
+    <li>CONFIRME SUA PRESENÇA</li>
+
+    <li>SEJA PONTUAL</li>
+
+    <li>BRANCO É COR DA NOIVA</li>
+
+    <li>PARTICIPE DA CERIMÓNIA</li>
+
+    <li>CONVIDADO NÃO CONVIDA</li>
+
+    <li>NÃO LEVE CRIANÇAS</li>
+
+    <li>NÃO ATRAPALHE O FOTÓGRAFO</li>
+
+    <li>TIRE MUITAS FOTOS</li>
+
+    <li>DIVIRTA-SE MUITO</li>
+
+    <li>NÃO VÁ INFORMAL</li>
+
+  </ul>
+
+</section>
+
+
+<!-- PERGUNTAS FREQUENTES -->
+
+<section>
+
+  <div class="eyebrow">Dúvidas</div>
+
+  <h2>Perguntas frequentes</h2>
+
+  <h3>Podemos levar crianças?</h3>
+
+  <p>
+    Consulte a indicação do convite ou contacte os noivos.
+  </p>
+
+  <h3>Tem estacionamento?</h3>
+
+  <p>
+    As informações sobre estacionamento serão
+    partilhadas pelos noivos.
+  </p>
+
+  <h3>Posso enviar alguém no meu lugar?</h3>
+
+  <p>
+    Pedimos que confirme previamente com os noivos.
+  </p>
+
+</section>
+
+
+<!-- CONFIRMAÇÃO DE PRESENÇA -->
+
+<section id="rsvp">
+
+  <div class="eyebrow">Esperamos por si</div>
+
+  <h2>Confirmar presença</h2>
+
+  <form id="rsvpForm">
+
+    <label for="guest">NOME</label>
+
+    <input
+      id="guest"
+      name="guest"
+      required
+      placeholder="O seu nome"
+    >
+
+    <label for="companion">ACOMPANHANTE</label>
+
+    <input
+      id="companion"
+      name="companion"
+      placeholder="Nome do acompanhante (se aplicável)"
+    >
+
+    <label for="attendance">IRÁ COMPARECER?</label>
+
+    <select id="attendance" name="attendance" required>
+
+      <option value="">Selecione</option>
+
+      <option>Sim, estarei lá</option>
+
+      <option>Não poderei ir</option>
+
+    </select>
+
+    <label for="message">MENSAGEM</label>
+
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      placeholder="Deixe uma mensagem aos noivos"
+    ></textarea>
+
+    <button class="btn" type="submit">
+      Confirmar
+    </button>
+
+    <p id="formMessage" aria-live="polite"></p>
+
+  </form>
+
+</section>
+
+</main>
+
+
+<footer>
+  CONVITES DIGITAIS • DIGITAL INVITATION • PREMIUM
+</footer>
+
+
+<script>
+
+/* ABRIR CONVITE */
+
+const openInvite = document.getElementById('openInvite');
+
+function revealInvite() {
+
+  document
+    .getElementById('invitation')
+    .classList.remove('hidden');
+
+  document
+    .getElementById('invitation')
+    .scrollIntoView({ behavior: 'smooth' });
+
+}
+
+openInvite.addEventListener('click', revealInvite);
+
+openInvite.addEventListener('keydown', e => {
+
+  if (e.key === 'Enter' || e.key === ' ') {
+
+    e.preventDefault();
+
+    revealInvite();
+
+  }
+
+});
+
+
+/* CONTAGEM DECRESCENTE */
+
+const targetDate = new Date('2026-11-09T10:00:00');
+
+function updateCountdown() {
+
+  const diff = targetDate - new Date();
+
+  if (diff <= 0) {
+
+    ['days','hours','minutes','seconds'].forEach(id => {
+
+      document.getElementById(id).textContent = '00';
+
+    });
+
+    document.getElementById('countdownMessage').textContent =
+      'A data indicada já passou. Atualize a data no código para usar este convite num próximo evento.';
+
+    return;
+
+  }
+
+  document.getElementById('days').textContent =
+    Math.floor(diff / 86400000);
+
+  document.getElementById('hours').textContent =
+    Math.floor(diff % 86400000 / 3600000);
+
+  document.getElementById('minutes').textContent =
+    Math.floor(diff % 3600000 / 60000);
+
+  document.getElementById('seconds').textContent =
+    Math.floor(diff % 60000 / 1000);
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+
+/* COPIAR IBAN */
+
+function copyIBAN() {
+
+  const value = document
+    .getElementById('iban')
+    .textContent
+    .trim();
+
+  if (value === 'A preencher') {
+
+    alert('Adicione o IBAN dos noivos no código antes de usar este botão.');
+
+    return;
+
+  }
+
+  navigator.clipboard.writeText(value)
+    .then(() => alert('IBAN copiado!'))
+    .catch(() => alert('Não foi possível copiar automaticamente.'));
+
+}
+
+
+/* CONFIRMAÇÃO DE PRESENÇA */
+
+document
+  .getElementById('rsvpForm')
+  .addEventListener('submit', e => {
+
+    e.preventDefault();
+
+    const data = new FormData(e.target);
+
+    const text = [
+
+      'Confirmação de presença - Jeremy e Júlia',
+
+      'Nome: ' + data.get('guest'),
+
+      'Acompanhante: ' +
+      (data.get('companion') || 'Não indicado'),
+
+      'Presença: ' + data.get('attendance'),
+
+      'Mensagem: ' +
+      (data.get('message') || 'Sem mensagem')
+
+    ].join('\n');
+
+    document.getElementById('formMessage').textContent =
+      'Formulário preenchido. Para enviar as respostas aos noivos, ligue este formulário a um e-mail, WhatsApp ou serviço de formulários.';
+
+  });
+
+</script>
+
+</body>
+</html>
